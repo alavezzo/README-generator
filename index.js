@@ -91,6 +91,25 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'confirm',
+        name: 'confirmLicense',
+        message: 'Is this project protected by a license?',
+        default: false,
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What license are you protected by?',
+        choices: ['MIT', 'Apache 2.0', 'ISC License', 'GNU GPLv2', 'GNU GPLv3', 'The Unlicense', 'Mozilla Public License 2.0', 'Boost Software License 1.0'],
+        when: ( {confirmLicense}) => {
+            if (confirmLicense) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 ];
 
@@ -136,3 +155,13 @@ function init() {
 init();
 
 
+
+
+// WHEN I choose a license for my application from a list of options
+// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
+// WHEN I enter my GitHub username
+// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
+// WHEN I enter my email address
+// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+// WHEN I click on the links in the Table of Contents
+// THEN I am taken to the corresponding section of the README
