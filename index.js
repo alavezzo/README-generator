@@ -82,7 +82,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'test',
+        name: 'tests',
         message: 'Provide instructions on how to run tests on this application',
         when: ({ confirmTests }) => {
             if (confirmTests) {
@@ -102,14 +102,11 @@ function promptUser() {
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(fileName, data, err => {
-            //if there's an error, reject the Promise and send the error to the Promise's `.catch()` method)
             if (err) {
                 reject(err);
-                //return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function
                 return;
             }
-    
-            resolve({
+            resolve ({
                 ok: true,
                 message: 'File created!'
             });
@@ -117,11 +114,21 @@ function writeToFile(fileName, data) {
     });
 }
 
+
 // TODO: Create a function to initialize app
 function init() {
     promptUser()
     .then(data => {
-        console.log(data)
+        return generateMarkdown(data)
+    })
+    .then(content => {
+       return writeToFile('./dist/README.md', content)
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse)
+    })
+    .catch(err => {
+        console.log(err);
     })
 }
 
