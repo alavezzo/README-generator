@@ -5,7 +5,7 @@ function renderLicenseBadge(license) {
       return '';
     } else if (license === 'MIT') {
       return `[![License](https://img.shields.io/badge/license-MIT-blue)](${renderLicenseLink(license)})`
-    } else if (license === 'Apache License 2.0') {
+    } else if (license === 'Apache 2.0') {
       return `[![License](https://img.shields.io/badge/license-APACHE_2.0-blue)](${renderLicenseLink(license)})`
     } else if (license === 'ISC License') {
       return `[![License](https://img.shields.io/badge/license-ISC-blue)](${renderLicenseLink(license)})`
@@ -17,7 +17,7 @@ function renderLicenseBadge(license) {
       return `[![License](https://img.shields.io/badge/license-The_Unlicense-blue)](${renderLicenseLink(license)})`
     } else if (license === 'Mozilla Public License 2.0') {
       return `[![License](https://img.shields.io/badge/license-Mozilla_Public_License_2.0-blue)](${renderLicenseLink(license)})`
-    } else if (license === 'Boost Software 1.0') {
+    } else if (license === 'Boost Software License 1.0') {
     return `[![License](https://img.shields.io/badge/license-Boost_Software_1.0-blue)](${renderLicenseLink(license)})`
   } 
 }
@@ -54,12 +54,28 @@ function renderLicenseSection(license) {
     return ''
   }
   return `## License 
-  ${license} `
+  This application is covered under ${license} `
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+
+  <details>
+<summary><b>Table of Contents</b> (click to open)</summary>
+<!-- MarkdownTOC -->
+
+1. [Description:](#description)
+1. [Instructions:](#instructions)
+1. [Usage:](#usage)
+1. [Contribution Guidelines:](#contribution-guidelines)
+1. [Test Instructions:](#test-instructions)
+1. [License:](#license)
+1. [Questions:](#questions)
+
+<!-- /MarkdownTOC -->
+</details>
+
   ${renderLicenseBadge(data.license)}
   ## Description
   ${data.description}
@@ -72,6 +88,10 @@ function generateMarkdown(data) {
   ## Test Instructions
   ${data.tests}
   ${renderLicenseSection(data.license)}
+  ## Questions 
+  Link to my GitHub: [github.com/alavezzo](https://github.com/${data.github})
+  Email Address: ${data.email}
+  Contact Instructions: ${data.contact}
 `;
 }
 

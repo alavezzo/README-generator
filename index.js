@@ -110,6 +110,39 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Enter your GitHub Username (Required)',
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            }
+            else {
+                console.log('Please provide your GitHub username!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your email address (Required)',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            }
+            else {
+                console.log('Please provide your email address!')
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'contact',
+        message: 'Enter instructions on how to get in touch with you.'
     }
 ];
 
@@ -152,16 +185,6 @@ function init() {
 }
 
 // Function call to initialize app
+
 init();
 
-
-
-
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
