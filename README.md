@@ -7,9 +7,6 @@
 1. [Description:](#description)
 1. [Instructions:](#instructions)
 1. [Usage:](#usage)
-1. [Contribution Guidelines:](#contribution-guidelines)
-1. [Test Instructions:](#test-instructions)
-1. [License:](#license)
 1. [Questions:](#questions)
 
 <!-- /MarkdownTOC -->
