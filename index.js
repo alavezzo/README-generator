@@ -168,10 +168,7 @@ function writeToFile(fileName, data) {
 
 function makeDirectory() {
 
-    fs.mkdir("./dist", function(err) {
-        if (err) {
-        console.log(err)
-        } 
+    fs.mkdir("./dist", function() {
   })
 };
 
