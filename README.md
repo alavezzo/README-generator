@@ -16,7 +16,11 @@
   ## Description
   This app constructs a professional readme through use of inquirer.
   ## Instructions
-  Clone the repo and begin!
+  Here is a link to a walkthrough video:
+  https://drive.google.com/file/d/1gX1kLwb5TqKDZHJqCOl19A5PCyb9x9hi/view
+  
+  Clone the repo and have fun!
+  
   ## Usage
   Included in this app's functionality is the creation of a dist/ folder that will hold your generated README
   ## Questions 
