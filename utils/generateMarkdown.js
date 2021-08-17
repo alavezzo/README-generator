@@ -56,6 +56,40 @@ function renderLicenseSection(license) {
   return `## License 
   This application is covered under ${license} `
 }
+function renderContributionSection(contribution) {
+  if (!contribution) {
+    return ''
+  }
+  return `## Contribution Guidelines 
+  ${contribution}`
+}
+
+function renderTestsSection(tests) {
+  if (!tests) {
+    return ''
+  }
+  return `## Test Instructions
+  ${tests}`
+}
+
+function renderContributionTOC(contribution) {
+  if (!contribution) {
+    return ''
+  }
+  return '[Contribution Guidelines:](#contribution-guidelines)'
+};
+function renderTestsTOC(tests) {
+  if (!tests) {
+    return ''
+  }
+  return '1. [Test Instructions:](#test-instructions)'
+};
+function renderLicenseTOC(license) {
+  if (!license) {
+    return ''
+  }
+  return '1. [License:](#license)'
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -68,9 +102,9 @@ function generateMarkdown(data) {
 1. [Description:](#description)
 1. [Instructions:](#instructions)
 1. [Usage:](#usage)
-1. [Contribution Guidelines:](#contribution-guidelines)
-1. [Test Instructions:](#test-instructions)
-1. [License:](#license)
+${renderContributionTOC(data.contribution)}
+${renderTestsTOC(data.tests)}
+${renderLicenseTOC(data.license)}
 1. [Questions:](#questions)
 
 <!-- /MarkdownTOC -->
@@ -83,10 +117,8 @@ function generateMarkdown(data) {
   ${data.instructions}
   ## Usage
   ${data.usage}
-  ## Contribution Guidelines
-  ${data.contribution}
-  ## Test Instructions
-  ${data.tests}
+  ${renderContributionSection(data.contribution)}
+  ${renderTestsSection(data.tests)}
   ${renderLicenseSection(data.license)}
   ## Questions 
   Link to my GitHub: [github.com/alavezzo](https://github.com/${data.github})
