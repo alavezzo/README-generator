@@ -22,11 +22,6 @@
   Clone the repo and begin!
   ## Usage
   Included in this app's functionality is the creation of a dist/ folder that will hold your generated README
-  ## Contribution Guidelines
-  undefined
-  ## Test Instructions
-  undefined
-  
   ## Questions 
   Link to my GitHub: [github.com/alavezzo](https://github.com/alavezzo)
   Email Address: anthonyelavezzo@gmail.com
