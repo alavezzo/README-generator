@@ -168,23 +168,19 @@ function writeToFile(fileName, data) {
 
 function makeDirectory() {
 
-    fs.mkdir("./dist", function(err) {
-        if (err) {
-        console.log(err)
-        } else {
-        console.log("New directory successfully created.")
-        }
+    fs.mkdir("./dist", function() {
   })
 };
 
 // TODO: Create a function to initialize app
 function init() {
+    makeDirectory();
     promptUser()
     .then(data => {
-        return generateMarkdown(data)
+        return generateMarkdown(data);
+        
     })
     .then(content => {
-        makeDirectory()
        return writeToFile('./dist/README.md', content)
     })
     .then(writeFileResponse => {
