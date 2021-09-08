@@ -76,7 +76,7 @@ function renderContributionTOC(contribution) {
   if (!contribution) {
     return ''
   }
-  return '[Contribution Guidelines:](#contribution-guidelines)'
+  return '1. [Contribution Guidelines:](#contribution-guidelines)'
 };
 function renderTestsTOC(tests) {
   if (!tests) {
@@ -121,7 +121,7 @@ ${renderLicenseTOC(data.license)}
   ${renderTestsSection(data.tests)}
   ${renderLicenseSection(data.license)}
   ## Questions 
-  Link to my GitHub: [github.com/alavezzo](https://github.com/${data.github})
+  Link to my GitHub: [github.com/${data.github}](https://github.com/${data.github})
   Email Address: ${data.email}
   Contact Instructions: ${data.contact}
 `;
